@@ -1,10 +1,10 @@
 <?PHP
 
 /* MYSQL Configuration */
-$DBServer	= 	'dbaddress';
-$DBName     = 	'dbname';
-$DBUser		= 	'dbuser';
-$DBPassword     = 	'dbpass';
+$DBServer	= 	'localhost';
+$DBName     = 	'status';
+$DBUser		= 	'root';
+$DBPassword     = 	'hitesh@123';
 
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, $DBName);
