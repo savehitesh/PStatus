@@ -106,7 +106,8 @@ if ($db_found) {
 function pingtest($ip)
 {
     
-    exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);
+    // exec(sprintf('ping -n 1 -w 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);
+    exec(sprintf('ping -n 1 -w 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);
     return $errorStr === 0;
 }
 ?>
