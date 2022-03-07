@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="<?PHP
-echo $refresh;
-?>">
+    <!-- <meta http-equiv="refresh" content="<?PHP
+// echo $refresh;
+?>"> -->
     <title>PStatus</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -45,9 +45,10 @@ $(document).ready(function(){
 <div class="container">
 <?PHP
 include "config.inc.php";
+$updateresult = "";
+$updateresult2 = "";
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found  = mysqli_select_db($db_handle, $DBName);
-
 if (isset($_POST['addserver'])) {
     $device  = mysqli_real_escape_string($db_handle,$_POST['device']);
     $ip      = mysqli_real_escape_string($db_handle,$_POST['ip']);
