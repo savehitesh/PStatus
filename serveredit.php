@@ -41,6 +41,7 @@ include "navbar.php";
         <tbody>
 <?PHP
 include "config.inc.php";
+$show_modal = 0;
 if (isset($_POST['reset'])) {
     $resetid    = mysqli_real_escape_string($db_handle,$_POST['reset']);
     $show_modal = true;
@@ -103,7 +104,7 @@ if ($db_found) {
         $ip      = $db_field['ip'];
         $type    = $db_field['type'];
         $id      = $db_field['id'];
-        $port    = $db_field['port'];
+        // $port    = $db_field['port'];
         $info    = $db_field['info'];
         $purpose = $db_field['purpose'];
 ?>
