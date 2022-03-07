@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?PHP
 include "config.inc.php";
+$show_modal    = 0;
 if (isset($_GET['refresh'])) {
     $refresh = $_GET['refresh'];
 }
