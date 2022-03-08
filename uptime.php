@@ -20,7 +20,7 @@ if ($db_found) {
                 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
                 set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
                 require_once "Mail.php";
-                $host          = 'ssl://'.$smtp;
+                $host          = $smtp;
                 $port          = $smtp_port;
                 $to            = $admin_email;
                 $email_from    = $smtp_username;
@@ -35,12 +35,14 @@ if ($db_found) {
                     'debug'=> true,
                     'host' => $host,
                     'port' => $port,
-                    'auth' => true,
+                    'auth' => false,
                     'username' => $smtp_username,
                     'password' => $smtp_password
                 ));
                 $mail          = $smtp->send($to, $headers, $email_body);
-               //$response = http_get("sendpush.php?Title=Pstatus - Device Up - " . $device . "&Message=Device Recovered Alert", array("timeout"=>1), $info);
+               // $response = http_get("sendpush.php?Title=Pstatus - Device Up - " . $device . "&Message=Device Recovered Alert", array("timeout"=>1), $info);
+                if (PEAR::isError($mail)) {
+                echo("<p>" . $mail->getMessage() . "</p>");}
             } 
                 $SQL2 = "UPDATE servers SET count = count + 1, ups = ups + 1, downs = '0', state = 'online', Email_sent = '', lastup = '" . $date . "' WHERE id = '" . $id . "'";
             
@@ -51,7 +53,7 @@ if ($db_found) {
                 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
                 set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
                 require_once "Mail.php";
-                $host          = 'ssl://'.$smtp;
+                $host          = $smtp;
                 $port          = $smtp_port;
                 $to            = $admin_email;
                 $email_from    = $smtp_username;
@@ -66,11 +68,13 @@ if ($db_found) {
                     'debug'=> true,
                     'host' => $host,
                     'port' => $port,
-                    'auth' => true,
+                    'auth' => false,
                     'username' => $smtp_username,
                     'password' => $smtp_password
                 ));
                 $mail          = $smtp->send($to, $headers, $email_body);
+                if (PEAR::isError($mail)) {
+                echo("<p>" . $mail->getMessage() . "</p>");}
             } else {
                 $SQL2 = "UPDATE servers SET count = count + 1, downs = downs + 1, state = 'offline', lastdown = '" . $date . "' WHERE id = '" . $id . "'";
             }
