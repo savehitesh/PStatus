@@ -9,7 +9,7 @@
         <h4 class="modal-title">About PStatus</h4>
       </div>
       <div class="modal-body">
-        <p>Written by Dan Medhurst</p>
+        <p>Written by Dan Medhurst, Edited by Hitesh Save</p>
         <p><a href="https://github.com/savehitesh/PStatus">Github</a></p>
       </div>
       <div class="modal-footer">
