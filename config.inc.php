@@ -1,5 +1,10 @@
 <?PHP
 
+// Master Config Data
+$company_name = "Compuage Infocom Limited";
+$company_website = "https://www.compuageindia.com/";
+// Asia/Kolkata is for INDIA
+date_default_timezone_set('Asia/Kolkata');
 /* MYSQL Configuration */
 $DBServer	= 	'localhost';
 $DBName     = 	'status';
