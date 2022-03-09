@@ -1,11 +1,11 @@
 <?PHP
 
-// Master Config Data
+// Master Config Data Hitesh Save 08-03-22
 $company_name = "Compuage Infocom Limited";
 $company_website = "https://www.compuageindia.com/";
-// Asia/Kolkata is for INDIA
+// Asia/Kolkata is for INDIA Hitesh Save 08-03-22
 date_default_timezone_set('Asia/Kolkata');
-/* MYSQL Configuration */
+/* MYSQL Configuration */ //Hitesh Save 08-03-22
 $DBServer	= 	'localhost';
 $DBName     = 	'status';
 $DBUser		= 	'root';
