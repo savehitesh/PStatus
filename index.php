@@ -106,7 +106,7 @@ if ($db_found) {
         $ip      = $db_field['ip'];
         $type    = $db_field['type'];
         $id      = $db_field['id'];
-        // $port    = $db_field['port'];
+        // $port    = $db_field['port']; //Removed Mr Hitesh Save 08-03-22
         $info    = $db_field['info'];
         $purpose = $db_field['purpose'];
         $count   = $db_field['count'];
