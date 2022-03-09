@@ -59,20 +59,18 @@ if (isset($_POST['updatesetting'])) {
 <table class="table table-striped" id="status" cellpadding="4" cellspacing="4" border="1">
     <thead>
         <tr><th colspan="5"><center><img src="icons/email-outbox.png">&nbsp;SMTP Settings</th></tr>
-        <tr><th><b>SMTP</th><th><b>PORT</th><th><b>USERNAME</th><th><b>PASSWORD</th><th><b>ADMIN EMAIL</th></tr>
+        <tr><th><b>SMTP</th><th><b>PORT</th><th><b>SENDER EMAIL</th><th><b>ADMIN EMAIL</th></tr>
 </thead>
         <tbody>
 <form method="POST" action="settings.php">
 <input type="hidden" value="1" name="updatesetting">
-<tr><td><input type="text" size="20" name="smtp" value="<?PHP
+<tr><td><input type="text" size="15" name="smtp" value="<?PHP
 echo $smtp;
-?>"</td><td><input type="text" size="20" name="smtp_port" value="<?PHP
+?>"</td><td><input type="text" size="10" name="smtp_port" value="<?PHP
 echo $smtp_port;
-?>"</td><td><input type="text" size="20" name="smtp_username" value="<?PHP
+?>"</td><td><input type="text" size="30" name="smtp_username" value="<?PHP
 echo $smtp_username;
-?>"</td><td><input type="password" size="20" name="smtp_password" value="<?PHP
-echo $smtp_password;
-?>"</td><td><input type="text" size="20" name="admin_email" value="<?PHP
+?>"</td><td><input type="text" size="30" name="admin_email" value="<?PHP
 echo $admin_email;
 ?>"</td></tr>
 </table>
@@ -82,15 +80,13 @@ echo $admin_email;
     <thead>
     <tr><th colspan="3"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
     </thead>
-    <tr><td><b>Default Refresh Rate (seconds)</td><td><b>Missed Ping Alert Threshold</td><td><b>Rows to Display</td><td><b>Enable Smart</td></tr>
+    <tr><td><b>Default Refresh Rate (seconds)</td><td><b>Missed Ping Alert Threshold</td><td><b>Rows to Display</td></tr>
     <tr><td><input type="text" size="20" name="refresh" value="<?PHP
 echo $refresh;
 ?>"></td><td><input type="text" size="20" name="alert_limit" value="<?PHP
 echo $alert_limit;
 ?>"></td><td><input type="text" size="20" name="row_count" value="<?PHP
 echo $row_count;
-?>"></td><td><input type="text" size="20" name="enable_smart" value="<?PHP
-echo $enable_smart;
 ?>"></td></tr>
     </table>
 <center>
