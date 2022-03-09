@@ -110,7 +110,7 @@ if ($db_found) {
 function pingtest($ip)
 {
     
-    // exec(sprintf('ping -n 1 -w 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);
+    // exec(sprintf('ping -n 1 -w 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);  //Hitesh Save 08-03-22
     exec(sprintf('ping -n 1 -w 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);
     return $errorStr === 0;
 }
